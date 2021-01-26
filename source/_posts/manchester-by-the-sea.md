@@ -15,4 +15,4 @@ categories:
 
 身為屏東鄉下人其中一個不方便就是非商業院線片只能到高雄看，in89和MLD台鋁請不要倒下，我不希望最後只能跑台北呀！
 
-{% asset_img manchesterByTheSea.png %}
+{% asset_img manchesterByTheSea.png '"《海邊的曼徹斯特》"' %}

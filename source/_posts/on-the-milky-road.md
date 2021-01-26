@@ -11,5 +11,5 @@ categories:
 
 這是部充滿隱喻的電影，導演用黑色幽默包裹著對愛情與和平的無奈，緊湊的節奏與魔幻寫實的手法將你捲入一股不知會流向何方的洪流當中。
 
-{% asset_img onTheMilkyRoad.jfif %}
+{% asset_img onTheMilkyRoad.jfif '"《牛奶配送員的魔幻人生》"' %}
 
