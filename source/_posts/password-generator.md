@@ -25,7 +25,7 @@ categories:
 第六個項目 `input` 欄位提供使用者自行輸入字元，輸入的字元將不會出現在產生的密碼字串裡。
 
 ### 程式邏輯
-
+#### 1. 取得表單 DOM
 首先使用瀏覽器提供的 API `getElementById` 取得表單欄位和 `button` DOM，並在產生密碼按鈕 `generatePasswordBtn` 監聽 `click` 事件綁定自定義函式 `generatePassword`
 
 ``` javascript
@@ -40,7 +40,7 @@ const generatePasswordBtn = document.getElementById('generateBtn')
 
 generatePasswordBtn.addEventListener('click', generatePassword)
 ```
-
+#### 2. 產生隨機字符
 接下來討論如何產生隨機字符，有以下 2 種想法：
 
 第一種是先定義已經包含所有字符的字串，再產生隨機數字使用 `indexOf(n)` 取得字符串接產生最終的密碼字串。
@@ -64,8 +64,8 @@ function getCharacter(number) {
   return String.fromCharCode(...number)
 }
 ```
-
-到這邊我們已經可以產生密碼了，只要根據輸入的數字決定迴圈次數，使用 `createRandomNumber()` 產生隨機數字陣列，再當作參數傳入 `getCharacter()` 即可取得密碼字串。
+#### 3. 根據密碼條件控制產生的隨機字符
+到這邊我們已經可以產生密碼了，只要根據輸入的數字決定迴圈次數，使用 `createRandomNumber()` 產生隨機數字陣列，再當作參數傳入 `getCharacter()` 即可產生密碼字串。
 
 但是程式功能必須可以自定義密碼包含的字符樣式，例如定義密碼不得含有大寫英文字母，因次不是每次產生的隨機數字都可以拿來使用，我們再額外定義函示 `getCharCode()`，根據表單裡勾選的 `checkbox` 來決定是否要使用這個數字。
 
@@ -117,9 +117,9 @@ function getCharCode() {
   return getCharCode()
 }
 ```
-
-最後定義 `generatePassword()` 函示
-
+#### 4. 定義 click 事件的回呼函示
+最後定義 `click` 事件要執行的回呼函示  `generatePassword()` 。檢查是否有勾選密碼條件，密碼長度是否符合規格，如果不符則在前端顯示提示訊息，符合規範則產生密碼字串，修改 
+ `resultText` DOM 的 `innerText` 顯示密碼結果。
 ``` javascript
 function generatePassword() {
   // 檢查密碼長度
